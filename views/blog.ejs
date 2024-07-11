@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Blogs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            background-color: #2a2e30;
+        }
+        li{
+            text-decoration: underline;
+            color:white;
+            margin:10px;
+        }
+        input:hover{
+            cursor: pointer;
+        }
+        h2{
+            color:white;
+        }
+        a{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <% if(locals.ct.length!=0){ %>
+        <h2>HERE ARE YOUR BLOGS:</h2>
+        <ol>
+            <% for(let i=0;i<nm.length;i++) {%>
+                <form action="/blg" method="POST">
+                    <input type="submit" value="<%= nm[i] %>" name="index">
+                </form>
+            <% } %>
+        </ol>
+    <% } else { %>
+        <h1>Sorry no blogs to show.</h1>
+        
+    <% } %>
+</body>
+</html>
